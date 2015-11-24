@@ -16,5 +16,6 @@ How to use git:
 9.2 git branch -d <local_branch_name> removes your local branch in case you end up using 9 as your go to.
 10. go to github and submit a pull request on master and when any one of us approves, go ahead and merge it. all of this done from the website.
 11. once you've merged, it is good practice to delete the branch that was just merged.
+12. if youre ever at master, do a git pull to make sure that your master is up to date and nobody esle has pushed any mroe updates.
 
 Good luck! Hope this helps.
