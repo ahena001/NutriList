@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Leonardo Martin. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "CookbookListController.h"
 
-@interface SecondViewController ()
+@interface CookbookListController ()
 
 @end
 
-@implementation SecondViewController
+@implementation CookbookListController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Leonardo Martin. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "RecipeListController.h"
 
-@interface FirstViewController ()
+@interface RecipeListController ()
 
 @end
 
-@implementation FirstViewController
+@implementation RecipeListController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

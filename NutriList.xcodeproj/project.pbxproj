@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		FC5D70A91C04591100B2E303 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5D70A81C04591100B2E303 /* main.m */; };
 		FC5D70AC1C04591100B2E303 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5D70AB1C04591100B2E303 /* AppDelegate.m */; };
-		FC5D70AF1C04591100B2E303 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5D70AE1C04591100B2E303 /* FirstViewController.m */; };
-		FC5D70B21C04591100B2E303 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5D70B11C04591100B2E303 /* SecondViewController.m */; };
+		FC5D70AF1C04591100B2E303 /* RecipeListController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5D70AE1C04591100B2E303 /* RecipeListController.m */; };
+		FC5D70B21C04591100B2E303 /* CookbookListController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5D70B11C04591100B2E303 /* CookbookListController.m */; };
 		FC5D70B51C04591100B2E303 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC5D70B31C04591100B2E303 /* Main.storyboard */; };
 		FC5D70B71C04591100B2E303 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC5D70B61C04591100B2E303 /* Images.xcassets */; };
 		FC5D70BA1C04591100B2E303 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC5D70B81C04591100B2E303 /* LaunchScreen.xib */; };
 		FC5D70C61C04591200B2E303 /* NutriListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5D70C51C04591200B2E303 /* NutriListTests.m */; };
+		FC5D70D71C045D0C00B2E303 /* ShoppingListController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5D70D61C045D0C00B2E303 /* ShoppingListController.m */; };
+		FC5D70DA1C045E8B00B2E303 /* RecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5D70D91C045E8B00B2E303 /* RecipeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,16 +35,20 @@
 		FC5D70A81C04591100B2E303 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FC5D70AA1C04591100B2E303 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FC5D70AB1C04591100B2E303 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FC5D70AD1C04591100B2E303 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		FC5D70AE1C04591100B2E303 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		FC5D70B01C04591100B2E303 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		FC5D70B11C04591100B2E303 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		FC5D70AD1C04591100B2E303 /* RecipeListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeListController.h; sourceTree = "<group>"; };
+		FC5D70AE1C04591100B2E303 /* RecipeListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeListController.m; sourceTree = "<group>"; };
+		FC5D70B01C04591100B2E303 /* CookbookListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookbookListController.h; sourceTree = "<group>"; };
+		FC5D70B11C04591100B2E303 /* CookbookListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookbookListController.m; sourceTree = "<group>"; };
 		FC5D70B41C04591100B2E303 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC5D70B61C04591100B2E303 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FC5D70B91C04591100B2E303 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		FC5D70BF1C04591200B2E303 /* NutriListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NutriListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC5D70C41C04591200B2E303 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC5D70C51C04591200B2E303 /* NutriListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NutriListTests.m; sourceTree = "<group>"; };
+		FC5D70D51C045D0B00B2E303 /* ShoppingListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingListController.h; sourceTree = "<group>"; };
+		FC5D70D61C045D0C00B2E303 /* ShoppingListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListController.m; sourceTree = "<group>"; };
+		FC5D70D81C045E8B00B2E303 /* RecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeViewController.h; sourceTree = "<group>"; };
+		FC5D70D91C045E8B00B2E303 /* RecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,12 +90,16 @@
 		FC5D70A51C04591100B2E303 /* NutriList */ = {
 			isa = PBXGroup;
 			children = (
+				FC5D70D51C045D0B00B2E303 /* ShoppingListController.h */,
+				FC5D70D61C045D0C00B2E303 /* ShoppingListController.m */,
+				FC5D70D81C045E8B00B2E303 /* RecipeViewController.h */,
+				FC5D70D91C045E8B00B2E303 /* RecipeViewController.m */,
 				FC5D70AA1C04591100B2E303 /* AppDelegate.h */,
 				FC5D70AB1C04591100B2E303 /* AppDelegate.m */,
-				FC5D70AD1C04591100B2E303 /* FirstViewController.h */,
-				FC5D70AE1C04591100B2E303 /* FirstViewController.m */,
-				FC5D70B01C04591100B2E303 /* SecondViewController.h */,
-				FC5D70B11C04591100B2E303 /* SecondViewController.m */,
+				FC5D70AD1C04591100B2E303 /* RecipeListController.h */,
+				FC5D70AE1C04591100B2E303 /* RecipeListController.m */,
+				FC5D70B01C04591100B2E303 /* CookbookListController.h */,
+				FC5D70B11C04591100B2E303 /* CookbookListController.m */,
 				FC5D70B31C04591100B2E303 /* Main.storyboard */,
 				FC5D70B61C04591100B2E303 /* Images.xcassets */,
 				FC5D70B81C04591100B2E303 /* LaunchScreen.xib */,
@@ -224,9 +234,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC5D70B21C04591100B2E303 /* SecondViewController.m in Sources */,
+				FC5D70B21C04591100B2E303 /* CookbookListController.m in Sources */,
+				FC5D70D71C045D0C00B2E303 /* ShoppingListController.m in Sources */,
+				FC5D70DA1C045E8B00B2E303 /* RecipeViewController.m in Sources */,
 				FC5D70AC1C04591100B2E303 /* AppDelegate.m in Sources */,
-				FC5D70AF1C04591100B2E303 /* FirstViewController.m in Sources */,
+				FC5D70AF1C04591100B2E303 /* RecipeListController.m in Sources */,
 				FC5D70A91C04591100B2E303 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
