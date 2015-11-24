@@ -1,0 +1,20 @@
+How to use git:
+
+1. go into terminal and cd into the directory where you'll be storing the files.
+2. type 'git init' and enter
+3. git remote add origin https://github.com/ahena001/NutriList.git
+4. git fetch
+4.1 git branch --set-upstream-to=origin/master master
+4.2 git pull
+5. to start working on your own branch, 'git checkout -b nameofyourbranch'
+5.1 to move from branch to branch use 'git checkout <name_of_branch>'
+6. you're now in your branch. 'git branch' to make sure
+7. whenever youre done working on that branch (please do this often to avoid accumulation of conflicts), 'git add *' or replace '*' for specific files you want to add. (ex. 'git add myFile.txt' will add only that file to your queue).
+8. git commit -m 'this is a commit message' for committing added files. Files not added will be ignored.
+9.'git push origin nameofyourbranch' will push your commit onto your branch.
+9.1 git push origin --delete <branchName> will push and delete your local branch at the same time, so use one or the other. just know that youll have to delete that local branch eventually to not clutter up your shit
+9.2 git branch -d <local_branch_name> removes your local branch in case you end up using 9 as your go to.
+10. go to github and submit a pull request on master and when any one of us approves, go ahead and merge it. all of this done from the website.
+11. once you've merged, it is good practice to delete the branch that was just merged.
+
+Good luck! Hope this helps.
