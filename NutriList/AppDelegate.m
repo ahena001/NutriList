@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import <Parse/Parse.h>
+#import "RecipeListController.h"
+#import "CookbookListController.h"
+#import "ShoppingListController.h"
 
 @interface AppDelegate ()
 
@@ -14,9 +18,23 @@
 
 @implementation AppDelegate
 
+@synthesize tabBarController, window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    // [Optional] Power your app with Local Datastore. For more info, go to
+    // https://parse.com/docs/ios_guide#localdatastore/iOS
+    [Parse enableLocalDatastore];
+    
+    // Initialize Parse.
+    [Parse setApplicationId:@"dqywoMr0LEzmgqQoEYswz6DaVZxA3Eyajj2pqj4D"
+                  clientKey:@"g2Ch7ooHEmGebPiggjGcaEXMV7u0a4CdbJ8ysGfu"];
+    
+    // [Optional] Track statistics around application opens.
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    // ...
+    
     return YES;
 }
 

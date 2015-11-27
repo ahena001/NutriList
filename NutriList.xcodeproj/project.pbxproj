@@ -16,7 +16,20 @@
 		FC5D70BA1C04591100B2E303 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC5D70B81C04591100B2E303 /* LaunchScreen.xib */; };
 		FC5D70C61C04591200B2E303 /* NutriListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5D70C51C04591200B2E303 /* NutriListTests.m */; };
 		FC5D70D71C045D0C00B2E303 /* ShoppingListController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5D70D61C045D0C00B2E303 /* ShoppingListController.m */; };
-		FC5D70DA1C045E8B00B2E303 /* RecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5D70D91C045E8B00B2E303 /* RecipeViewController.m */; };
+		FC8EDC9D1C0789D10067D142 /* RecipeDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8EDC9C1C0789D10067D142 /* RecipeDetailController.m */; };
+		FC8EDCD31C07964E0067D142 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8EDCD21C07964E0067D142 /* UIKit.framework */; };
+		FC8EDCD71C0796B40067D142 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8EDCD61C0796B40067D142 /* AudioToolbox.framework */; };
+		FC8EDCD91C0796BF0067D142 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8EDCD81C0796BF0067D142 /* CFNetwork.framework */; };
+		FC8EDCDB1C0796C90067D142 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8EDCDA1C0796C90067D142 /* CoreGraphics.framework */; };
+		FC8EDCDD1C07970C0067D142 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8EDCDC1C07970C0067D142 /* CoreLocation.framework */; };
+		FC8EDCDF1C07971C0067D142 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8EDCDE1C07971C0067D142 /* QuartzCore.framework */; };
+		FC8EDCE11C07972B0067D142 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8EDCE01C07972B0067D142 /* Security.framework */; };
+		FC8EDCE31C0797330067D142 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8EDCE21C0797330067D142 /* StoreKit.framework */; };
+		FC8EDCE51C0797410067D142 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8EDCE41C0797410067D142 /* SystemConfiguration.framework */; };
+		FC8EDCE71C0797520067D142 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8EDCE61C0797520067D142 /* libsqlite3.dylib */; };
+		FC8EDCE91C07975A0067D142 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8EDCE81C07975A0067D142 /* libz.dylib */; };
+		FC8EDCEC1C0797850067D142 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8EDCEA1C0797840067D142 /* Bolts.framework */; };
+		FC8EDCED1C0797850067D142 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8EDCEB1C0797850067D142 /* Parse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +60,21 @@
 		FC5D70C51C04591200B2E303 /* NutriListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NutriListTests.m; sourceTree = "<group>"; };
 		FC5D70D51C045D0B00B2E303 /* ShoppingListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingListController.h; sourceTree = "<group>"; };
 		FC5D70D61C045D0C00B2E303 /* ShoppingListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListController.m; sourceTree = "<group>"; };
-		FC5D70D81C045E8B00B2E303 /* RecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeViewController.h; sourceTree = "<group>"; };
-		FC5D70D91C045E8B00B2E303 /* RecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeViewController.m; sourceTree = "<group>"; };
+		FC8EDC9B1C0789D10067D142 /* RecipeDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeDetailController.h; sourceTree = "<group>"; };
+		FC8EDC9C1C0789D10067D142 /* RecipeDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeDetailController.m; sourceTree = "<group>"; };
+		FC8EDCD21C07964E0067D142 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FC8EDCD61C0796B40067D142 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		FC8EDCD81C0796BF0067D142 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		FC8EDCDA1C0796C90067D142 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FC8EDCDC1C07970C0067D142 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FC8EDCDE1C07971C0067D142 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FC8EDCE01C07972B0067D142 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		FC8EDCE21C0797330067D142 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		FC8EDCE41C0797410067D142 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FC8EDCE61C0797520067D142 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		FC8EDCE81C07975A0067D142 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		FC8EDCEA1C0797840067D142 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../../Downloads/parse-library-1.10.0/Bolts.framework"; sourceTree = "<group>"; };
+		FC8EDCEB1C0797850067D142 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../../Downloads/parse-library-1.10.0/Parse.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +82,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC8EDCE91C07975A0067D142 /* libz.dylib in Frameworks */,
+				FC8EDCE71C0797520067D142 /* libsqlite3.dylib in Frameworks */,
+				FC8EDCE51C0797410067D142 /* SystemConfiguration.framework in Frameworks */,
+				FC8EDCEC1C0797850067D142 /* Bolts.framework in Frameworks */,
+				FC8EDCE31C0797330067D142 /* StoreKit.framework in Frameworks */,
+				FC8EDCE11C07972B0067D142 /* Security.framework in Frameworks */,
+				FC8EDCED1C0797850067D142 /* Parse.framework in Frameworks */,
+				FC8EDCDF1C07971C0067D142 /* QuartzCore.framework in Frameworks */,
+				FC8EDCDD1C07970C0067D142 /* CoreLocation.framework in Frameworks */,
+				FC8EDCDB1C0796C90067D142 /* CoreGraphics.framework in Frameworks */,
+				FC8EDCD91C0796BF0067D142 /* CFNetwork.framework in Frameworks */,
+				FC8EDCD71C0796B40067D142 /* AudioToolbox.framework in Frameworks */,
+				FC8EDCD31C07964E0067D142 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +111,7 @@
 		FC5D709A1C04591100B2E303 = {
 			isa = PBXGroup;
 			children = (
+				FC8EDCEE1C07F74F0067D142 /* Frameworks */,
 				FC5D70A51C04591100B2E303 /* NutriList */,
 				FC5D70C21C04591200B2E303 /* NutriListTests */,
 				FC5D70A41C04591100B2E303 /* Products */,
@@ -92,10 +132,10 @@
 			children = (
 				FC5D70D51C045D0B00B2E303 /* ShoppingListController.h */,
 				FC5D70D61C045D0C00B2E303 /* ShoppingListController.m */,
-				FC5D70D81C045E8B00B2E303 /* RecipeViewController.h */,
-				FC5D70D91C045E8B00B2E303 /* RecipeViewController.m */,
 				FC5D70AA1C04591100B2E303 /* AppDelegate.h */,
 				FC5D70AB1C04591100B2E303 /* AppDelegate.m */,
+				FC8EDC9B1C0789D10067D142 /* RecipeDetailController.h */,
+				FC8EDC9C1C0789D10067D142 /* RecipeDetailController.m */,
 				FC5D70AD1C04591100B2E303 /* RecipeListController.h */,
 				FC5D70AE1C04591100B2E303 /* RecipeListController.m */,
 				FC5D70B01C04591100B2E303 /* CookbookListController.h */,
@@ -132,6 +172,26 @@
 				FC5D70C41C04591200B2E303 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FC8EDCEE1C07F74F0067D142 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC8EDCEA1C0797840067D142 /* Bolts.framework */,
+				FC8EDCEB1C0797850067D142 /* Parse.framework */,
+				FC8EDCE81C07975A0067D142 /* libz.dylib */,
+				FC8EDCE61C0797520067D142 /* libsqlite3.dylib */,
+				FC8EDCE41C0797410067D142 /* SystemConfiguration.framework */,
+				FC8EDCE21C0797330067D142 /* StoreKit.framework */,
+				FC8EDCE01C07972B0067D142 /* Security.framework */,
+				FC8EDCDE1C07971C0067D142 /* QuartzCore.framework */,
+				FC8EDCDC1C07970C0067D142 /* CoreLocation.framework */,
+				FC8EDCDA1C0796C90067D142 /* CoreGraphics.framework */,
+				FC8EDCD81C0796BF0067D142 /* CFNetwork.framework */,
+				FC8EDCD61C0796B40067D142 /* AudioToolbox.framework */,
+				FC8EDCD21C07964E0067D142 /* UIKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +296,7 @@
 			files = (
 				FC5D70B21C04591100B2E303 /* CookbookListController.m in Sources */,
 				FC5D70D71C045D0C00B2E303 /* ShoppingListController.m in Sources */,
-				FC5D70DA1C045E8B00B2E303 /* RecipeViewController.m in Sources */,
+				FC8EDC9D1C0789D10067D142 /* RecipeDetailController.m in Sources */,
 				FC5D70AC1C04591100B2E303 /* AppDelegate.m in Sources */,
 				FC5D70AF1C04591100B2E303 /* RecipeListController.m in Sources */,
 				FC5D70A91C04591100B2E303 /* main.m in Sources */,
@@ -367,8 +427,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NutriList/parse-library-1.10.0",
+					"/Users/leonardomartin/Downloads/parse-library-1.10.0",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = NutriList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -377,8 +447,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NutriList/parse-library-1.10.0",
+					"/Users/leonardomartin/Downloads/parse-library-1.10.0",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = NutriList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -436,6 +516,7 @@
 				FC5D70CB1C04591200B2E303 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FC5D70CC1C04591200B2E303 /* Build configuration list for PBXNativeTarget "NutriListTests" */ = {
 			isa = XCConfigurationList;
@@ -444,6 +525,7 @@
 				FC5D70CE1C04591200B2E303 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
