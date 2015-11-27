@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface RecipeListController : UITableViewController
+@interface RecipeListController : UITableViewController <UINavigationControllerDelegate>
 
+@property NSMutableDictionary *recipes;
+@property NSMutableArray *chickenPieIngredients;
+@property NSArray *recipeNames;
 
 @end
 
