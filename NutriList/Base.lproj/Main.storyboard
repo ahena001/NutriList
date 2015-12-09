@@ -18,44 +18,12 @@
                     <connections>
                         <segue destination="cVx-py-Mit" kind="relationship" relationship="viewControllers" id="qon-D8-ba9"/>
                         <segue destination="JLp-HW-8FK" kind="relationship" relationship="viewControllers" id="U6V-uT-TJo"/>
-                        <segue destination="HOa-oq-UGa" kind="relationship" relationship="viewControllers" id="M8j-BM-q5c"/>
+                        <segue destination="ULj-VW-0t8" kind="relationship" relationship="viewControllers" id="zbw-Rd-z5B"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
-        </scene>
-        <!--Third-->
-        <scene sceneID="pQ5-si-wO6">
-            <objects>
-                <tableViewController id="HOa-oq-UGa" customClass="ShoppingListController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ABC-zr-vbd">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="JG6-jp-Ue1">
-                                <rect key="frame" x="0.0" y="22" width="768" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JG6-jp-Ue1" id="fTO-7B-iZr">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
-                                </tableViewCellContentView>
-                                <animations/>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="HOa-oq-UGa" id="Usb-wL-NjI"/>
-                            <outlet property="delegate" destination="HOa-oq-UGa" id="6cl-hW-ftB"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Third" id="Wvv-ei-Acm"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WVH-kt-4oZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="0.0" y="1224"/>
         </scene>
         <!--Recipes-->
         <scene sceneID="ISf-BV-1xI">
@@ -230,6 +198,77 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2vQ-k9-aBg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="902" y="-639"/>
+        </scene>
+        <!--Shopping List-->
+        <scene sceneID="2zY-TH-nTO">
+            <objects>
+                <viewController id="ULj-VW-0t8" customClass="ShoppingListController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dsL-2x-dfS">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="DXr-zk-Kbt">
+                                <rect key="frame" x="0.0" y="20" width="768" height="953"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ingredient" id="HBJ-oe-0Er" customClass="IngredientTableViewCell">
+                                        <rect key="frame" x="0.0" y="22" width="768" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HBJ-oe-0Er" id="tCZ-Hj-hcg">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IUR-rL-9QF">
+                                                    <rect key="frame" x="646" y="11" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Measure" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fHo-sD-YjZ">
+                                                    <rect key="frame" x="696" y="11" width="66" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2e5-GA-T4V">
+                                                    <rect key="frame" x="30" y="11" width="127" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="measureLabel" destination="fHo-sD-YjZ" id="QFk-E4-wkS"/>
+                                            <outlet property="nameLabel" destination="2e5-GA-T4V" id="jiC-Cy-qiY"/>
+                                            <outlet property="valueLabel" destination="IUR-rL-9QF" id="XkT-Ze-i9U"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ULj-VW-0t8" id="MeH-hq-4fV"/>
+                                    <outlet property="delegate" destination="ULj-VW-0t8" id="EMz-Wo-JTW"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Shopping List" id="mgv-yO-hFb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D94-4l-tzz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6" y="1216"/>
         </scene>
         <!--My Cookbooks-->
         <scene sceneID="x60-Hf-uH4">

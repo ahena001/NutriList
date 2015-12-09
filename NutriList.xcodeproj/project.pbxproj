@@ -30,6 +30,7 @@
 		FC8EDCE91C07975A0067D142 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8EDCE81C07975A0067D142 /* libz.dylib */; };
 		FC8EDCEC1C0797850067D142 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8EDCEA1C0797840067D142 /* Bolts.framework */; };
 		FC8EDCED1C0797850067D142 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8EDCEB1C0797850067D142 /* Parse.framework */; };
+		FCE2E8061C17E0300097CDD0 /* IngredientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE2E8051C17E0300097CDD0 /* IngredientTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		FC8EDCE81C07975A0067D142 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		FC8EDCEA1C0797840067D142 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../../Downloads/parse-library-1.10.0/Bolts.framework"; sourceTree = "<group>"; };
 		FC8EDCEB1C0797850067D142 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../../Downloads/parse-library-1.10.0/Parse.framework"; sourceTree = "<group>"; };
+		FCE2E8041C17E0300097CDD0 /* IngredientTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientTableViewCell.h; sourceTree = "<group>"; };
+		FCE2E8051C17E0300097CDD0 /* IngredientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,8 @@
 		FC5D70A51C04591100B2E303 /* NutriList */ = {
 			isa = PBXGroup;
 			children = (
+				FCE2E8041C17E0300097CDD0 /* IngredientTableViewCell.h */,
+				FCE2E8051C17E0300097CDD0 /* IngredientTableViewCell.m */,
 				FC5D70D51C045D0B00B2E303 /* ShoppingListController.h */,
 				FC5D70D61C045D0C00B2E303 /* ShoppingListController.m */,
 				FC5D70AA1C04591100B2E303 /* AppDelegate.h */,
@@ -300,6 +305,7 @@
 				FC5D70AC1C04591100B2E303 /* AppDelegate.m in Sources */,
 				FC5D70AF1C04591100B2E303 /* RecipeListController.m in Sources */,
 				FC5D70A91C04591100B2E303 /* main.m in Sources */,
+				FCE2E8061C17E0300097CDD0 /* IngredientTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
