@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Singleton.h"
 
 @interface CookbookListController : UITableViewController <UINavigationControllerDelegate>
 
+@property Singleton *sharedData;
 
 @end
 

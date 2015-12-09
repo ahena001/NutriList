@@ -14,12 +14,15 @@
 
 @implementation RecipeListController
 
-@synthesize recipes, chickenPieIngredients, recipeNames;
+@synthesize recipes, chickenPieIngredients, recipeNames, sharedData;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    sharedData = [Singleton sharedData];
+    NSLog(@"%@",[sharedData.recipeNames description]);
+    NSLog(@"%@",[sharedData.globalRecipes description]);
     PFObject *testObject = [PFObject objectWithClassName:@"Cookbook"];
     testObject[@"name"] = @"bar";
     [testObject saveInBackground];
@@ -39,6 +42,24 @@
     
     recipeNames = [recipes allKeys];
     
+    //can only delete one row at a time
+    self.tableView.allowsMultipleSelectionDuringEditing = NO;
+    //create edit button on the right
+    
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+    
+}
+
+//reload data every time the view re-appears
+-(void) viewWillAppear:(BOOL)animated{
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,7 +74,7 @@
 {
     // Return the number of entries in the shared addressbook .
 //    return [myAddressBook.myAddressBook count];
-    return [recipeNames count];
+    return [sharedData.recipeNames count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -63,43 +84,41 @@
     
 
     //and makes a cell out of it
-    cell.textLabel.text = [recipeNames objectAtIndex:indexPath.row];
+    cell.textLabel.text = [sharedData.recipeNames objectAtIndex:indexPath.row];
     
     return cell;
 }
 
-//
-////if you select a row
-//-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-////    //set the shared address book's current contact to the selected contact
-////    myAddressBook.currentContact = [myAddressBook.myAddressBook objectAtIndex:indexPath.row];
-////    //same for the index
-////    myAddressBook.currentIndex = indexPath.row;
-//}
-//
-//// Override to support conditional editing of the table view.
-//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-//    // Return NO if you do not want the specified item to be editable.
-//    return YES;
-//}
-//
-//
-//
-//// Override to support editing the table view.
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    
-//    //for deleting purposes
-//    if (editingStyle == UITableViewCellEditingStyleDelete) {
-//        // Delete the row from the data source
-////        [myAddressBook.myAddressBook removeObjectAtIndex:indexPath.row];
-//        //actual deletion of row
-//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//        
-//    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-//        
-//    }
-//}
-//
+//if you select a row
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *curRName = [sharedData.recipeNames objectAtIndex:indexPath.row];
+    sharedData.currentRecipe = [sharedData.globalRecipes objectForKey:curRName];
+    
+}
+
+// Override to support conditional editing of the table view.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+
+
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    //for deleting purposes
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        
+        //actual deletion of row
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        
+    }
+}
+
 
 @end

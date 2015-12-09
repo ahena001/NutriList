@@ -268,7 +268,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D94-4l-tzz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6" y="1216"/>
+            <point key="canvasLocation" x="0.0" y="1216"/>
         </scene>
         <!--My Cookbooks-->
         <scene sceneID="x60-Hf-uH4">

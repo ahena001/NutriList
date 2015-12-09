@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>AC2DF5B7-0BF4-433F-8967-B5763389A95A</string>
 	<key>IDESourceControlProjectName</key>
-	<string>NutriList</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>78067581CD8AB501BEC79A44E15F2615CF163EFF</key>
 		<string>https://github.com/ahena001/NutriList.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>NutriList.xcodeproj</string>
+	<string>NutriList.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>78067581CD8AB501BEC79A44E15F2615CF163EFF</key>

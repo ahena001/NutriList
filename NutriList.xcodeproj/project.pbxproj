@@ -31,6 +31,10 @@
 		FC8EDCEC1C0797850067D142 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8EDCEA1C0797840067D142 /* Bolts.framework */; };
 		FC8EDCED1C0797850067D142 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8EDCEB1C0797850067D142 /* Parse.framework */; };
 		FCE2E8061C17E0300097CDD0 /* IngredientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE2E8051C17E0300097CDD0 /* IngredientTableViewCell.m */; };
+		FCE2E8091C17F20D0097CDD0 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE2E8081C17F20C0097CDD0 /* Singleton.m */; };
+		FCE2E8101C17FA100097CDD0 /* Ingredient.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE2E80B1C17FA100097CDD0 /* Ingredient.m */; };
+		FCE2E8111C17FA100097CDD0 /* Cookbook.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE2E80D1C17FA100097CDD0 /* Cookbook.m */; };
+		FCE2E8121C17FA100097CDD0 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE2E80F1C17FA100097CDD0 /* Recipe.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +82,14 @@
 		FC8EDCEB1C0797850067D142 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../../Downloads/parse-library-1.10.0/Parse.framework"; sourceTree = "<group>"; };
 		FCE2E8041C17E0300097CDD0 /* IngredientTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientTableViewCell.h; sourceTree = "<group>"; };
 		FCE2E8051C17E0300097CDD0 /* IngredientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientTableViewCell.m; sourceTree = "<group>"; };
+		FCE2E8071C17F20C0097CDD0 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Singleton.h; path = NutriList.xcodeproj/../Singleton.h; sourceTree = SOURCE_ROOT; };
+		FCE2E8081C17F20C0097CDD0 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Singleton.m; path = NutriList.xcodeproj/../Singleton.m; sourceTree = SOURCE_ROOT; };
+		FCE2E80A1C17FA100097CDD0 /* Ingredient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ingredient.h; path = NutriList.xcodeproj/Ingredient.h; sourceTree = SOURCE_ROOT; };
+		FCE2E80B1C17FA100097CDD0 /* Ingredient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Ingredient.m; path = NutriList.xcodeproj/Ingredient.m; sourceTree = SOURCE_ROOT; };
+		FCE2E80C1C17FA100097CDD0 /* Cookbook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cookbook.h; path = NutriList.xcodeproj/../Cookbook.h; sourceTree = SOURCE_ROOT; };
+		FCE2E80D1C17FA100097CDD0 /* Cookbook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cookbook.m; path = NutriList.xcodeproj/../Cookbook.m; sourceTree = SOURCE_ROOT; };
+		FCE2E80E1C17FA100097CDD0 /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
+		FCE2E80F1C17FA100097CDD0 /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +145,9 @@
 		FC5D70A51C04591100B2E303 /* NutriList */ = {
 			isa = PBXGroup;
 			children = (
+				FCE2E8131C1807F70097CDD0 /* Storage */,
+				FCE2E8071C17F20C0097CDD0 /* Singleton.h */,
+				FCE2E8081C17F20C0097CDD0 /* Singleton.m */,
 				FCE2E8041C17E0300097CDD0 /* IngredientTableViewCell.h */,
 				FCE2E8051C17E0300097CDD0 /* IngredientTableViewCell.m */,
 				FC5D70D51C045D0B00B2E303 /* ShoppingListController.h */,
@@ -197,6 +212,19 @@
 				FC8EDCD21C07964E0067D142 /* UIKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FCE2E8131C1807F70097CDD0 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				FCE2E80A1C17FA100097CDD0 /* Ingredient.h */,
+				FCE2E80B1C17FA100097CDD0 /* Ingredient.m */,
+				FCE2E80C1C17FA100097CDD0 /* Cookbook.h */,
+				FCE2E80D1C17FA100097CDD0 /* Cookbook.m */,
+				FCE2E80E1C17FA100097CDD0 /* Recipe.h */,
+				FCE2E80F1C17FA100097CDD0 /* Recipe.m */,
+			);
+			name = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,12 +327,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCE2E8121C17FA100097CDD0 /* Recipe.m in Sources */,
 				FC5D70B21C04591100B2E303 /* CookbookListController.m in Sources */,
+				FCE2E8101C17FA100097CDD0 /* Ingredient.m in Sources */,
+				FCE2E8091C17F20D0097CDD0 /* Singleton.m in Sources */,
 				FC5D70D71C045D0C00B2E303 /* ShoppingListController.m in Sources */,
 				FC8EDC9D1C0789D10067D142 /* RecipeDetailController.m in Sources */,
 				FC5D70AC1C04591100B2E303 /* AppDelegate.m in Sources */,
 				FC5D70AF1C04591100B2E303 /* RecipeListController.m in Sources */,
 				FC5D70A91C04591100B2E303 /* main.m in Sources */,
+				FCE2E8111C17FA100097CDD0 /* Cookbook.m in Sources */,
 				FCE2E8061C17E0300097CDD0 /* IngredientTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

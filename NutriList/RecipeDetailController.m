@@ -7,16 +7,17 @@
 //
 
 #import "RecipeDetailController.h"
+#import "Recipe.h"
 
 @implementation RecipeDetailController
 
-@synthesize ingredients, recipeNameLabel, recipePicture, instructionsLabel;
+@synthesize sharedData, recipeNameLabel, recipePicture, instructionsLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    sharedData = [Singleton sharedData];
     // Do any additional setup after loading the view, typically from a nib.
     
-    ingredients = [NSArray arrayWithObjects:@"Tomatoes", @"Cheese", @"Bread", @"caca",@"caca",@"Tomatoes", @"Cheese", @"Bread", @"caca",@"caca",@"Tomatoes", @"Cheese", @"Bread", @"caca",@"caca",@"Tomatoes", @"Cheese", @"Bread", @"caca",@"caca",@"Tomatoes", @"Cheese", @"Bread", @"caca",@"caca",@"Tomatoes", @"Cheese", @"Bread", @"caca",@"caca",@"Tomatoes", @"Cheese", @"Bread", @"caca",@"caca",@"Tomatoes", @"Cheese", @"Bread", @"caca",@"caca",nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,19 +29,15 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    recipeNameLabel.text = @"Turkey Bonanza";
+    recipeNameLabel.text = sharedData.currentRecipe.name;
     
-}
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of entries in the shared addressbook .
     //    return [myAddressBook.myAddressBook count];
-    return [ingredients count];
+    return [sharedData.currentRecipe.ingredients count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -53,7 +50,7 @@
     }
     
     //and makes a cell out of it
-    cell.textLabel.text = [ingredients objectAtIndex:indexPath.row];
+    cell.textLabel.text = [sharedData.currentRecipe.ingredients objectAtIndex:indexPath.row];
     
     return cell;
 }
