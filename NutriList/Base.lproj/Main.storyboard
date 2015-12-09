@@ -17,7 +17,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="cVx-py-Mit" kind="relationship" relationship="viewControllers" id="qon-D8-ba9"/>
-                        <segue destination="foA-ZS-gEB" kind="relationship" relationship="viewControllers" id="yYx-yI-VGQ"/>
+                        <segue destination="JLp-HW-8FK" kind="relationship" relationship="viewControllers" id="U6V-uT-TJo"/>
                         <segue destination="HOa-oq-UGa" kind="relationship" relationship="viewControllers" id="M8j-BM-q5c"/>
                     </connections>
                 </tabBarController>
@@ -68,7 +68,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="recipes" id="4eX-vP-Qc6">
-                                <rect key="frame" x="0.0" y="22" width="768" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4eX-vP-Qc6" id="5Ix-n2-MJV">
                                     <rect key="frame" x="0.0" y="0.0" width="735" height="43"/>
@@ -91,6 +91,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rme-OV-GRo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1890" y="-639"/>
+        </scene>
+        <!--My Cookbooks-->
+        <scene sceneID="Qat-NP-o0g">
+            <objects>
+                <tableViewController id="LGD-6e-SjL" customClass="CookbookListController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ioU-Kc-Xsd">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cookbook" id="T6X-lg-Vsk">
+                                <rect key="frame" x="0.0" y="86" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T6X-lg-Vsk" id="38l-71-xr0">
+                                    <rect key="frame" x="0.0" y="0.0" width="735" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <segue destination="oc6-0N-KWs" kind="push" id="ymt-28-b63"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="LGD-6e-SjL" id="MeP-Is-xtq"/>
+                            <outlet property="delegate" destination="LGD-6e-SjL" id="bnO-zQ-k4s"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My Cookbooks" id="vW7-zC-Z7M"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gmy-I6-DzX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1882" y="576"/>
         </scene>
         <!--Recipe Detail Controller-->
         <scene sceneID="ISi-Qg-MiJ">
@@ -177,61 +212,12 @@
             </objects>
             <point key="canvasLocation" x="2761" y="-639"/>
         </scene>
-        <!--Root View Controller-->
-        <scene sceneID="MKC-9q-VqU">
-            <objects>
-                <tableViewController id="0Fl-CT-vsk" customClass="CookbookListController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="oFx-bW-V2s">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="UMS-vU-g31">
-                                <rect key="frame" x="0.0" y="22" width="768" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UMS-vU-g31" id="Kdb-Ol-mbd">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
-                                </tableViewCellContentView>
-                                <animations/>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="0Fl-CT-vsk" id="6JJ-0K-reA"/>
-                            <outlet property="delegate" destination="0Fl-CT-vsk" id="6Hw-sQ-EiA"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="YXD-f4-Y6C"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hhm-IX-hfr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1958" y="512"/>
-        </scene>
-        <!--Second-->
-        <scene sceneID="Zz3-Oc-Oun">
-            <objects>
-                <navigationController id="foA-ZS-gEB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Second" id="ASb-hV-xXu"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oHy-W5-Jgs">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="0Fl-CT-vsk" kind="relationship" relationship="rootViewController" id="Rqc-hU-pQC"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b5D-EG-qqz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="970" y="512"/>
-        </scene>
         <!--Recipes-->
         <scene sceneID="tsU-ug-Pfx">
             <objects>
                 <navigationController id="cVx-py-Mit" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Recipes" id="FH2-GV-3op"/>
+                    <navigationItem key="navigationItem" id="ZJU-Q1-gSw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vPZ-5e-qhD">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -245,10 +231,33 @@
             </objects>
             <point key="canvasLocation" x="902" y="-639"/>
         </scene>
+        <!--My Cookbooks-->
+        <scene sceneID="x60-Hf-uH4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JLp-HW-8FK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Cookbooks" id="y4C-u6-cMz"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yOu-RH-CpG">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LGD-6e-SjL" kind="relationship" relationship="rootViewController" id="zdP-mO-cr6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xdG-IX-94Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="902" y="576"/>
+        </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="ymt-28-b63"/>
+    </inferredMetricsTieBreakers>
 </document>

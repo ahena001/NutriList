@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CookbookListController : UITableViewController
+@interface CookbookListController : UITableViewController <UINavigationControllerDelegate>
 
 
 @end
