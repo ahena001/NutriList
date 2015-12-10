@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14F27" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CCCookbook" representedClassName="CCCookbook" syncable="YES">
+        <attribute name="cookbookName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recipeNames" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="recipes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CCRecipe" inverseName="cookbook" inverseEntity="CCRecipe" syncable="YES"/>
+    </entity>
+    <entity name="CCRecipe" representedClassName="CCRecipe" syncable="YES">
+        <attribute name="created" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="ingredients" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="instructions" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recipeName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cookbook" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CCCookbook" inverseName="recipes" inverseEntity="CCCookbook" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CCCookbook" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="CCRecipe" positionX="-90" positionY="-340" width="128" height="133"/>
+    </elements>
+</model>
