@@ -102,7 +102,7 @@
     self.cookbooksInCC = [self.cookbooksInCC arrayByAddingObject:newCookbook];
     
     [self.managedObjectContext save:nil]; // save entity to core data
-    [self.tableView reloadData];
+  
     
 }
 
@@ -133,11 +133,11 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.lists.count;
+    return self.cookbooksInCC.count;
 }
 
 
@@ -159,7 +159,7 @@
 //    cell.textLabel.text = currentCookbook.cookbookName;
     
     // Configure the cell...
-    //[self.tableView reloadData];
+    [self.tableView reloadData];
     return cell;
 }
 
