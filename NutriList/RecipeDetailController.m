@@ -8,6 +8,7 @@
 
 #import "RecipeDetailController.h"
 #import "Recipe.h"
+#import "IngredientTableViewCell.h"
 
 @implementation RecipeDetailController
 
@@ -43,10 +44,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ingredientsCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    IngredientTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if(cell == nil){
-        cell = ([[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier]);
+        cell = ([[IngredientTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier]);
     }
     
     //and makes a cell out of it

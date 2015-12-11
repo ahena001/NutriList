@@ -80,7 +80,7 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <segue destination="oc6-0N-KWs" kind="push" id="ymt-28-b63"/>
+                                    <segue destination="prg-vD-jjB" kind="push" id="CwB-B5-GNc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -94,6 +94,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gmy-I6-DzX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1882" y="576"/>
+        </scene>
+        <!--Cookbook Recipes Table View Controller-->
+        <scene sceneID="Zj4-wc-1Xk">
+            <objects>
+                <tableViewController id="Hxh-Eu-wfc" customClass="CookbookRecipesTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ZMh-cA-0Ia">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="gaQ-02-MbP">
+                                <rect key="frame" x="0.0" y="86" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gaQ-02-MbP" id="28N-Ko-JIW">
+                                    <rect key="frame" x="0.0" y="0.0" width="735" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <segue destination="qI1-Vv-4B5" kind="push" id="LZO-Hh-W7r"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Hxh-Eu-wfc" id="dpL-p8-P6b"/>
+                            <outlet property="delegate" destination="Hxh-Eu-wfc" id="1DR-Hp-D2T"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="t2N-5X-imw"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MlM-qi-6cn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3746" y="576"/>
         </scene>
         <!--Recipe Detail Controller-->
         <scene sceneID="ISi-Qg-MiJ">
@@ -290,6 +325,26 @@
             </objects>
             <point key="canvasLocation" x="902" y="576"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BMd-Br-avi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="prg-vD-jjB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="39N-yZ-qcl"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="F6V-DV-gee">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Hxh-Eu-wfc" kind="relationship" relationship="rootViewController" id="Jmu-fy-0bb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hUl-6K-vSO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2766" y="576"/>
+        </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -297,6 +352,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ymt-28-b63"/>
+        <segue reference="ztd-5t-J3V"/>
     </inferredMetricsTieBreakers>
 </document>
