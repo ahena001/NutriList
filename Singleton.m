@@ -20,23 +20,23 @@
 
 -(void) stub{
     
-    Cookbook *newCookbook= [NSEntityDescription insertNewObjectForEntityForName:@"Cookbook" inManagedObjectContext:self.managedObjectContext]; // new CCCookbook object created and hooked up to managedObjectContext
+//    Cookbook *newCookbook= [NSEntityDescription insertNewObjectForEntityForName:@"Cookbook" inManagedObjectContext:self.managedObjectContext]; // new CCCookbook object created and hooked up to managedObjectContext
+//    
+//    //     set properties
+//    newCookbook.cookbook_name = @"cacafuate";
+//    //        newCookbook.cookbookName = @"staticCookbook"; // TODO
+//    [self.managedObjectContext save:nil]; // save entity to core data
+//
+//
+//    Recipe *newRecipe = [NSEntityDescription insertNewObjectForEntityForName:@"Recipe" inManagedObjectContext:self.managedObjectContext]; // new CCCookbook object created and hooked up to managedObjectContext
+//    
+//    //     set properties
+//    newRecipe.recipe_name = @"recipe1";
+//    //        newCookbook.cookbookName = @"staticCookbook"; // TODO
+//    [self.managedObjectContext save:nil]; // save entity to core data
+//    
     
-    //     set properties
-    newCookbook.cookbook_name = @"cacafuate";
-    //        newCookbook.cookbookName = @"staticCookbook"; // TODO
-    [self.managedObjectContext save:nil]; // save entity to core data
-
-
-    Recipe *newRecipe = [NSEntityDescription insertNewObjectForEntityForName:@"Recipe" inManagedObjectContext:self.managedObjectContext]; // new CCCookbook object created and hooked up to managedObjectContext
     
-    //     set properties
-    newRecipe.recipe_name = @"recipe1";
-    //        newCookbook.cookbookName = @"staticCookbook"; // TODO
-    [self.managedObjectContext save:nil]; // save entity to core data
-    
-    
-
     
     /*
      for(int i = 0; i < [coreData.recipes count]; i++)

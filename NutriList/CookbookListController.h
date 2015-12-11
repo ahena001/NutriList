@@ -13,5 +13,7 @@
 
 @property Singleton *sharedData;
 
+@property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext; // helper
+
 @end
 

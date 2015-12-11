@@ -8,7 +8,7 @@
 
 #import "CookbookListController.h"
 #import "Cookbook.h"
-
+#import "AppDelegate.h"
 @interface CookbookListController ()
 
 @end
@@ -104,7 +104,7 @@
     
     if (editing) {
         // Add the + button
-        UIBarButtonItem *addBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addAction:)];
+        UIBarButtonItem *addBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addBarButton:)];
         self.navigationItem.leftBarButtonItem = addBtn;
     } else {
         // remove the + button
@@ -114,6 +114,50 @@
 
 -(IBAction)addBarButton:(id)sender{
 
+    //when add Cookbook is clicked then popup an aler asking for a cookbookname
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Cookbook Name" message:@"Name your new Cookbook" delegate:self cancelButtonTitle:@"Create" otherButtonTitles:nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alert show];
+}
+
+#pragma mark - AlertView input
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSString *alertViewInputText =[ [alertView textFieldAtIndex:0]text];
+    
+    if([alertViewInputText length] < 2 )
+    {
+        NSLog(@"EMPTY INPUT REACHED");
+        alertViewInputText = [NSString stringWithFormat:@"invalidNameSOMENUMBER"];
+        
+        //        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Cookbook Name" message:@"Cookbook name must be minimum 3 characters" delegate:self cancelButtonTitle:@"Create" otherButtonTitles:nil];
+        //        alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+        //        [alert show];
+        
+    }
+    
+    NSLog(@"Entered: %@", alertViewInputText);
+    
+    
+    Cookbook *newCookbook= [NSEntityDescription insertNewObjectForEntityForName:@"Cookbook" inManagedObjectContext:self.managedObjectContext]; // new CCCookbook object created and hooked up to managedObjectContext
+    
+    //     set properties
+    newCookbook.cookbook_name = alertViewInputText;
+    //        newCookbook.cookbookName = @"staticCookbook"; // TODO
+    [self.managedObjectContext save:nil]; // save entity to core data
+    
+    
+    [sharedData.userCookbooks addObject:newCookbook];
+    
+    [self.tableView reloadData];
+    
+    
+    
+    
+}
+
+-(NSManagedObjectContext *)managedObjectContext
+{
+    return [(AppDelegate*) [[UIApplication sharedApplication]delegate]managedObjectContext];
 }
 
 

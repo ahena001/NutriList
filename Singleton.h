@@ -16,7 +16,7 @@
 @property BOOL inCookbook;
 
 @property NSArray *globalRecipes;
-@property NSArray *userCookbooks;
+@property NSMutableArray *userCookbooks;
 @property NSMutableArray *recipeNames;
 @property Recipe *currentRecipe;
 @property Cookbook *currentCookbook;
