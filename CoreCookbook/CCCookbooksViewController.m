@@ -15,6 +15,7 @@
 @property NSArray *lists;
 @property NSArray *cookbooksInCC;
 @property(nonatomic,retain) IBOutlet UITableViewCell *cookbookCell;
+@property (nonatomic,strong) NSString *currentName;
 
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext; // helper
 -(IBAction)addCookBook:(id)sender;
@@ -45,15 +46,10 @@
     for(int i =0; i<cookbooksInCC.count; i++){
         CCCookbook * cookbook = [cookbooksInCC objectAtIndex:i];
         NSString * cookbookName = cookbook.cookbookName;
-        NSLog(@"COOKBOOK at %i, is of name:%@", i,cookbookName);
-        [self.tableView reloadData];
-        
-        
-        for(int i = 0; i < [self.lists count]; i++)
-            NSLog(@"Name of CCCookbook in self.lists %@",[[self.lists objectAtIndex:i] name]);
-        
-        
+        NSLog(@"COOKBOOK at %i, is of name: %@", i,cookbookName);
     }
+    
+  //   [self.tableView reloadData];
 }
 
 //
@@ -88,8 +84,27 @@
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alert show];
     
+//    [self saveInCoreData:self.currentName];
+    
 }
 
+-(void)saveInCoreData:(NSString*)textFieldInput
+{
+    
+    CCCookbook *newCookbook= [NSEntityDescription insertNewObjectForEntityForName:@"CCCookbook" inManagedObjectContext:self.managedObjectContext]; // new CCCookbook object created and hooked up to managedObjectContext
+    
+    //     set properties
+    newCookbook.cookbookName = textFieldInput;
+    //        newCookbook.cookbookName = @"staticCookbook"; // TODO
+    
+    
+    
+    self.cookbooksInCC = [self.cookbooksInCC arrayByAddingObject:newCookbook];
+    
+    [self.managedObjectContext save:nil]; // save entity to core data
+    [self.tableView reloadData];
+    
+}
 
 #pragma mark - AlertView input
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
@@ -107,22 +122,9 @@
     }
     
     NSLog(@"Entered: %@", alertViewInputText);
+    self.currentName = alertViewInputText;
+    [self saveInCoreData:self.currentName];
 
-    
-    CCCookbook *newCookbook= [NSEntityDescription insertNewObjectForEntityForName:@"CCCookbook" inManagedObjectContext:self.managedObjectContext]; // new CCCookbook object created and hooked up to managedObjectContext
-
-//     set properties
-    newCookbook.cookbookName = alertViewInputText;
-//        newCookbook.cookbookName = @"staticCookbook"; // TODO
-    [self.managedObjectContext save:nil]; // save entity to core data
-
-
-    self.lists = [self.lists arrayByAddingObject:newCookbook];
-
-    [self.tableView reloadData];
-    
-    
-    
     
 }
 
@@ -140,21 +142,24 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-   
+//    if(indexPath.row>=cookbooksInCC.count || indexPath.row<0){
+//        return nil;
+//    }
+
     static NSString *CellIdentifier = @"CookbookCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier"];
     
     if (!cell)
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     
-    CCCookbook *currentCookbook = [self.lists objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+    CCCookbook *currentCookbook = [self.cookbooksInCC objectAtIndex:indexPath.row];
     cell.textLabel.text = currentCookbook.cookbookName;
     
 //    CCCookbook *currentCookbook = [self.lists objectAtIndex: self.tableView.indexPathForSelectedRow.row];
 //    cell.textLabel.text = currentCookbook.cookbookName;
     
     // Configure the cell...
-    
+    //[self.tableView reloadData];
     return cell;
 }
 
