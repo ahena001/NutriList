@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="15B42" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Cookbook" representedClassName="Cookbook" syncable="YES">
+        <attribute name="cookbook_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cookbook_recipes" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="recipes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="cookbook" inverseEntity="Recipe" syncable="YES"/>
+    </entity>
+    <entity name="Ingredient" representedClassName="Ingredient" syncable="YES">
+        <attribute name="ingredient_measure" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ingredient_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ingredient_qty" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="recipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="ingredients" inverseEntity="Recipe" syncable="YES"/>
+    </entity>
+    <entity name="Recipe" representedClassName="Recipe" syncable="YES">
+        <attribute name="recipe_ingredients" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="recipe_instructions" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recipe_name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cookbook" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cookbook" inverseName="recipes" inverseEntity="Cookbook" syncable="YES"/>
+        <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ingredient" inverseName="recipe" inverseEntity="Ingredient" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Cookbook" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Recipe" positionX="-288" positionY="-9" width="128" height="118"/>
+        <element name="Ingredient" positionX="-74" positionY="117" width="128" height="103"/>
+    </elements>
+</model>

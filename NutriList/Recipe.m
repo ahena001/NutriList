@@ -2,23 +2,21 @@
 //  Recipe.m
 //  
 //
-//  Created by Leonardo Martin on 12/9/15.
+//  Created by Leonardo Martin on 12/10/15.
 //
 //
 
 #import "Recipe.h"
+#import "Cookbook.h"
+#import "Ingredient.h"
+
 
 @implementation Recipe
 
-@synthesize name, ingredients, instructions, image;
-
-- (instancetype)initWithName:(NSString *)name_ 
-{
-    self = [super init];
-    if (self) {
-        name = name_;
-    }
-    return self;
-}
+@dynamic recipe_name;
+@dynamic recipe_ingredients;
+@dynamic recipe_instructions;
+@dynamic cookbook;
+@dynamic ingredients;
 
 @end

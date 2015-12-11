@@ -32,10 +32,11 @@
 		FC8EDCED1C0797850067D142 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8EDCEB1C0797850067D142 /* Parse.framework */; };
 		FCE2E8061C17E0300097CDD0 /* IngredientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE2E8051C17E0300097CDD0 /* IngredientTableViewCell.m */; };
 		FCE2E8091C17F20D0097CDD0 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE2E8081C17F20C0097CDD0 /* Singleton.m */; };
-		FCE2E8101C17FA100097CDD0 /* Ingredient.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE2E80B1C17FA100097CDD0 /* Ingredient.m */; };
-		FCE2E8111C17FA100097CDD0 /* Cookbook.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE2E80D1C17FA100097CDD0 /* Cookbook.m */; };
-		FCE2E8121C17FA100097CDD0 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE2E80F1C17FA100097CDD0 /* Recipe.m */; };
 		FCE2E8161C1A4C820097CDD0 /* CookbookRecipesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE2E8151C1A4C820097CDD0 /* CookbookRecipesTableViewController.m */; };
+		FCE2E8191C1A533D0097CDD0 /* NutriList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCE2E8171C1A533D0097CDD0 /* NutriList.xcdatamodeld */; };
+		FCE2E8261C1A55A20097CDD0 /* Ingredient.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE2E8211C1A55A20097CDD0 /* Ingredient.m */; };
+		FCE2E8271C1A55A20097CDD0 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE2E8231C1A55A20097CDD0 /* Recipe.m */; };
+		FCE2E8281C1A55A20097CDD0 /* Cookbook.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE2E8251C1A55A20097CDD0 /* Cookbook.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,14 +86,15 @@
 		FCE2E8051C17E0300097CDD0 /* IngredientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientTableViewCell.m; sourceTree = "<group>"; };
 		FCE2E8071C17F20C0097CDD0 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Singleton.h; path = NutriList.xcodeproj/../Singleton.h; sourceTree = SOURCE_ROOT; };
 		FCE2E8081C17F20C0097CDD0 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Singleton.m; path = NutriList.xcodeproj/../Singleton.m; sourceTree = SOURCE_ROOT; };
-		FCE2E80A1C17FA100097CDD0 /* Ingredient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ingredient.h; path = NutriList.xcodeproj/Ingredient.h; sourceTree = SOURCE_ROOT; };
-		FCE2E80B1C17FA100097CDD0 /* Ingredient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Ingredient.m; path = NutriList.xcodeproj/Ingredient.m; sourceTree = SOURCE_ROOT; };
-		FCE2E80C1C17FA100097CDD0 /* Cookbook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cookbook.h; path = NutriList.xcodeproj/../Cookbook.h; sourceTree = SOURCE_ROOT; };
-		FCE2E80D1C17FA100097CDD0 /* Cookbook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cookbook.m; path = NutriList.xcodeproj/../Cookbook.m; sourceTree = SOURCE_ROOT; };
-		FCE2E80E1C17FA100097CDD0 /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
-		FCE2E80F1C17FA100097CDD0 /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
 		FCE2E8141C1A4C820097CDD0 /* CookbookRecipesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CookbookRecipesTableViewController.h; path = NutriList.xcodeproj/../CookbookRecipesTableViewController.h; sourceTree = SOURCE_ROOT; };
 		FCE2E8151C1A4C820097CDD0 /* CookbookRecipesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CookbookRecipesTableViewController.m; path = NutriList.xcodeproj/../CookbookRecipesTableViewController.m; sourceTree = SOURCE_ROOT; };
+		FCE2E8181C1A533D0097CDD0 /* NutriList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NutriList.xcdatamodel; sourceTree = "<group>"; };
+		FCE2E8201C1A55A20097CDD0 /* Ingredient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ingredient.h; sourceTree = "<group>"; };
+		FCE2E8211C1A55A20097CDD0 /* Ingredient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ingredient.m; sourceTree = "<group>"; };
+		FCE2E8221C1A55A20097CDD0 /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
+		FCE2E8231C1A55A20097CDD0 /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
+		FCE2E8241C1A55A20097CDD0 /* Cookbook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cookbook.h; sourceTree = "<group>"; };
+		FCE2E8251C1A55A20097CDD0 /* Cookbook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cookbook.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				FC5D70B61C04591100B2E303 /* Images.xcassets */,
 				FC5D70B81C04591100B2E303 /* LaunchScreen.xib */,
 				FC5D70A61C04591100B2E303 /* Supporting Files */,
+				FCE2E8171C1A533D0097CDD0 /* NutriList.xcdatamodeld */,
 			);
 			path = NutriList;
 			sourceTree = "<group>";
@@ -222,12 +225,12 @@
 		FCE2E8131C1807F70097CDD0 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				FCE2E80A1C17FA100097CDD0 /* Ingredient.h */,
-				FCE2E80B1C17FA100097CDD0 /* Ingredient.m */,
-				FCE2E80C1C17FA100097CDD0 /* Cookbook.h */,
-				FCE2E80D1C17FA100097CDD0 /* Cookbook.m */,
-				FCE2E80E1C17FA100097CDD0 /* Recipe.h */,
-				FCE2E80F1C17FA100097CDD0 /* Recipe.m */,
+				FCE2E8201C1A55A20097CDD0 /* Ingredient.h */,
+				FCE2E8211C1A55A20097CDD0 /* Ingredient.m */,
+				FCE2E8221C1A55A20097CDD0 /* Recipe.h */,
+				FCE2E8231C1A55A20097CDD0 /* Recipe.m */,
+				FCE2E8241C1A55A20097CDD0 /* Cookbook.h */,
+				FCE2E8251C1A55A20097CDD0 /* Cookbook.m */,
 			);
 			name = Storage;
 			sourceTree = "<group>";
@@ -333,16 +336,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCE2E8161C1A4C820097CDD0 /* CookbookRecipesTableViewController.m in Sources */,
-				FCE2E8121C17FA100097CDD0 /* Recipe.m in Sources */,
+				FCE2E8261C1A55A20097CDD0 /* Ingredient.m in Sources */,
+				FCE2E8191C1A533D0097CDD0 /* NutriList.xcdatamodeld in Sources */,
+				FCE2E8281C1A55A20097CDD0 /* Cookbook.m in Sources */,
 				FC5D70B21C04591100B2E303 /* CookbookListController.m in Sources */,
-				FCE2E8101C17FA100097CDD0 /* Ingredient.m in Sources */,
 				FCE2E8091C17F20D0097CDD0 /* Singleton.m in Sources */,
 				FC5D70D71C045D0C00B2E303 /* ShoppingListController.m in Sources */,
 				FC8EDC9D1C0789D10067D142 /* RecipeDetailController.m in Sources */,
+				FCE2E8271C1A55A20097CDD0 /* Recipe.m in Sources */,
 				FC5D70AC1C04591100B2E303 /* AppDelegate.m in Sources */,
 				FC5D70AF1C04591100B2E303 /* RecipeListController.m in Sources */,
 				FC5D70A91C04591100B2E303 /* main.m in Sources */,
-				FCE2E8111C17FA100097CDD0 /* Cookbook.m in Sources */,
 				FCE2E8061C17E0300097CDD0 /* IngredientTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -572,6 +576,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FCE2E8171C1A533D0097CDD0 /* NutriList.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FCE2E8181C1A533D0097CDD0 /* NutriList.xcdatamodel */,
+			);
+			currentVersion = FCE2E8181C1A533D0097CDD0 /* NutriList.xcdatamodel */;
+			path = NutriList.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FC5D709B1C04591100B2E303 /* Project object */;
 }

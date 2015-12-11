@@ -16,7 +16,7 @@
 
 @implementation Singleton
 
-@synthesize globalRecipes, userCookbooks, recipeNames, currentRecipe, shoppingList, currentCookbook, inCookbook;
+@synthesize globalRecipes, userCookbooks, recipeNames, currentRecipe, shoppingList, currentCookbook, inCookbook, managedObjectContext;
 
 -(void) stub{
     
@@ -34,23 +34,23 @@
      }
      */
     
-    Recipe *r1 = [[Recipe alloc]initWithName:@"Chicken Pot Pie"];
-    Ingredient *ing1 = [[Ingredient alloc] initWith:@"Chicken" :1 :@"lb"];
-    Ingredient *ing2 = [[Ingredient alloc] initWith:@"Flour" :2 :@"scoops"];
-    Ingredient *ing3 = [[Ingredient alloc] initWith:@"Pie" :1 :@"slice"];
-    
-    NSMutableArray *arr1 = [[NSMutableArray alloc] initWithObjects:ing1, ing2, ing3, nil];
-    r1.ingredients = arr1;
-    
-    r1.instructions = @"1. Beat the chicken.\n2. Put it in the over at 500 degrees F.\n3. Roll it in flour.\n4. Stick in the pie.\5. Enjoy!";
-    
-    r1.image = nil;
-    
-//    for (int i = 0; i < NUMBER_OF_RECIPES; i++) {
-        [globalRecipes setObject:r1 forKey:r1.name];
-        Recipe *r = [globalRecipes objectForKey:r1.name];
-        NSLog(@"%@", r.name);
-//    }
+//    Recipe *r1 = [[Recipe alloc]initWithName:@"Chicken Pot Pie"];
+//    Ingredient *ing1 = [[Ingredient alloc] initWith:@"Chicken" :1 :@"lb"];
+//    Ingredient *ing2 = [[Ingredient alloc] initWith:@"Flour" :2 :@"scoops"];
+//    Ingredient *ing3 = [[Ingredient alloc] initWith:@"Pie" :1 :@"slice"];
+//    
+//    NSMutableArray *arr1 = [[NSMutableArray alloc] initWithObjects:ing1, ing2, ing3, nil];
+//    r1.ingredients = arr1;
+//    
+//    r1.instructions = @"1. Beat the chicken.\n2. Put it in the over at 500 degrees F.\n3. Roll it in flour.\n4. Stick in the pie.\5. Enjoy!";
+//    
+//    r1.image = nil;
+//    
+////    for (int i = 0; i < NUMBER_OF_RECIPES; i++) {
+//        [globalRecipes setObject:r1 forKey:r1.name];
+//        Recipe *r = [globalRecipes objectForKey:r1.name];
+//        NSLog(@"%@", r.name);
+////    }
     
     
     
@@ -61,16 +61,41 @@
      }
      */
     
-    Cookbook *cb = [[Cookbook alloc]initWithName:@"I love Chicken"];
-    [cb.recipeNames addObject:@"Chicken Pot Pie"];
-//    [cb.recipeNames addObject:@"Chicken Breast"];
-//    [cb.recipeNames addObject:@"Grilled Chiecken"];
+    NSFetchRequest * fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Cookbook"];
+    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"cookbook_name" ascending:YES]];
+    NSError *error = nil;
+    userCookbooks = [managedObjectContext executeFetchRequest:fetchRequest error:nil];
     
-    for(int i = 0 ; i < NUMBER_OF_COOKBOOKS; i++){
-        [userCookbooks addObject:cb];
+    fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Recipe"];
+    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"recipe_name" ascending:YES]];
+    globalRecipes = [managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    
+    // MapViewController * mapvc = [self.tabBarController.viewControllers objectAtIndex:0];
+    
+    for(int i =0; i<userCookbooks.count; i++){
+        Cookbook * cookbook = [userCookbooks objectAtIndex:i];
+        NSString * cookbookName = cookbook.cookbook_name;
+        NSLog(@"COOKBOOK at %i, is of name:%@", i,cookbookName);
+        
+        
     }
     
-    recipeNames = [globalRecipes allKeys];
+    for (int i = 0; i < [globalRecipes count]; i++) {
+        Recipe *recipe = [globalRecipes objectAtIndex:i];
+        [recipeNames addObject:recipe.recipe_name];
+    }
+
+    
+//    Cookbook *cb = [[Cookbook alloc]initWithName:@"I love Chicken"];
+//    [cb.recipeNames addObject:@"Chicken Pot Pie"];
+////    [cb.recipeNames addObject:@"Chicken Breast"];
+////    [cb.recipeNames addObject:@"Grilled Chiecken"];
+//    
+//    for(int i = 0 ; i < NUMBER_OF_COOKBOOKS; i++){
+//        [userCookbooks addObject:cb];
+//    }
+    
+//    recipeNames = [globalRecipes allKeys];
     
     
 }
@@ -98,15 +123,20 @@
 {
     self = [super init];
     if (self) {
-        globalRecipes = [[NSMutableDictionary alloc]init];
-        userCookbooks = [[NSMutableArray alloc] init];
+        globalRecipes = [[NSArray alloc]init];
+        userCookbooks = [[NSArray alloc] init];
         shoppingList = [[NSMutableArray alloc] init];
-        currentRecipe = [[Recipe alloc] initWithName:@""];
-        currentCookbook = [[Cookbook alloc]initWithName:@""];
+        currentRecipe = [[Recipe alloc] init];
+        currentCookbook = [[Cookbook alloc]init];
         [self stub];
 
     }
     return self;
+}
+
+-(NSManagedObjectContext *)managedObjectContext
+{
+    return [(AppDelegate*) [[UIApplication sharedApplication]delegate]managedObjectContext];
 }
 
 @end

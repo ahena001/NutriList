@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AppDelegate.h"
 
 @class Cookbook, Recipe;
 
@@ -14,12 +15,14 @@
 
 @property BOOL inCookbook;
 
-@property NSMutableDictionary *globalRecipes;
-@property NSMutableArray *userCookbooks;
-@property NSArray *recipeNames;
+@property NSArray *globalRecipes;
+@property NSArray *userCookbooks;
+@property NSMutableArray *recipeNames;
 @property Recipe *currentRecipe;
 @property Cookbook *currentCookbook;
 @property NSMutableArray *shoppingList;
+
+@property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 
 +(Singleton *) sharedData;
 
