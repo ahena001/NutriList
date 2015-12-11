@@ -30,7 +30,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    recipeNameLabel.text = sharedData.currentRecipe.name;
+    recipeNameLabel.text = sharedData.currentRecipe.recipe_name;
     
 }
 
@@ -51,7 +51,7 @@
     }
     
     //and makes a cell out of it
-    cell.textLabel.text = [sharedData.currentRecipe.ingredients objectAtIndex:indexPath.row];
+    cell.textLabel.text = [sharedData.recipeNames objectAtIndex:indexPath.row];
     
     return cell;
 }

@@ -91,8 +91,7 @@
 
 //if you select a row
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString *curRName = [sharedData.recipeNames objectAtIndex:indexPath.row];
-    sharedData.currentRecipe = [sharedData.globalRecipes objectForKey:curRName];
+    sharedData.currentRecipe = [sharedData.globalRecipes objectAtIndex:indexPath.row];
     
 }
 

@@ -20,6 +20,24 @@
 
 -(void) stub{
     
+    Cookbook *newCookbook= [NSEntityDescription insertNewObjectForEntityForName:@"Cookbook" inManagedObjectContext:self.managedObjectContext]; // new CCCookbook object created and hooked up to managedObjectContext
+    
+    //     set properties
+    newCookbook.cookbook_name = @"cacafuate";
+    //        newCookbook.cookbookName = @"staticCookbook"; // TODO
+    [self.managedObjectContext save:nil]; // save entity to core data
+
+
+    Recipe *newRecipe = [NSEntityDescription insertNewObjectForEntityForName:@"Recipe" inManagedObjectContext:self.managedObjectContext]; // new CCCookbook object created and hooked up to managedObjectContext
+    
+    //     set properties
+    newRecipe.recipe_name = @"recipe1";
+    //        newCookbook.cookbookName = @"staticCookbook"; // TODO
+    [self.managedObjectContext save:nil]; // save entity to core data
+    
+    
+
+    
     /*
      for(int i = 0; i < [coreData.recipes count]; i++)
      {
@@ -65,7 +83,7 @@
     fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"cookbook_name" ascending:YES]];
     NSError *error = nil;
     userCookbooks = [managedObjectContext executeFetchRequest:fetchRequest error:nil];
-    
+
     fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Recipe"];
     fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"recipe_name" ascending:YES]];
     globalRecipes = [managedObjectContext executeFetchRequest:fetchRequest error:nil];
@@ -125,9 +143,9 @@
     if (self) {
         globalRecipes = [[NSArray alloc]init];
         userCookbooks = [[NSArray alloc] init];
-        shoppingList = [[NSMutableArray alloc] init];
-        currentRecipe = [[Recipe alloc] init];
-        currentCookbook = [[Cookbook alloc]init];
+//        shoppingList = [[NSMutableArray alloc] init];
+//        currentRecipe = [[Recipe alloc] init];
+//        currentCookbook = [[Cookbook alloc]init];
         [self stub];
 
     }

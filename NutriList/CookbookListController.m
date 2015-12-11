@@ -65,7 +65,7 @@
     
     Cookbook *cb = [sharedData.userCookbooks objectAtIndex:indexPath.row];
     //and makes a cell out of it
-    cell.textLabel.text = cb.name;
+    cell.textLabel.text = @"leo";
     
     return cell;
 }
