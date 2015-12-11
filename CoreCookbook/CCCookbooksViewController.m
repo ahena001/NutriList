@@ -14,6 +14,7 @@
 //@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSArray *lists;
 @property NSArray *cookbooksInCC;
+
 @property(nonatomic,retain) IBOutlet UITableViewCell *cookbookCell;
 @property (nonatomic,strong) NSString *currentName;
 
@@ -27,7 +28,7 @@
 @implementation CCCookbooksViewController
 
 @synthesize lists  = _lists; // holds what is to be presented
-@synthesize cookbooksInCC;
+@synthesize cookbooksInCC = _cookbooksInCC; // new holder of presentation
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,18 +37,19 @@
     NSFetchRequest * fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"CCCookbook"];
     fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"cookbookName" ascending:YES]];
     
-    self.lists = [[NSMutableArray alloc] init];
+   // self.lists = [[NSMutableArray alloc] init];
     NSError *error = nil;
-    self.cookbooksInCC = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    self.cookbooksInCC = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     
  
    // MapViewController * mapvc = [self.tabBarController.viewControllers objectAtIndex:0];
     
-    for(int i =0; i<cookbooksInCC.count; i++){
-        CCCookbook * cookbook = [cookbooksInCC objectAtIndex:i];
+    for(int i =0; i< [self.cookbooksInCC count]; i++){
+        CCCookbook * cookbook = [self.cookbooksInCC objectAtIndex:i];
         NSString * cookbookName = cookbook.cookbookName;
         NSLog(@"COOKBOOK at %i, is of name: %@", i,cookbookName);
     }
+    
     
   //   [self.tableView reloadData];
 }
@@ -63,7 +65,12 @@
 //    NSLog(@"DEVXX: Size of lists in viewDidLoad %lu", self.lists.count);
 //    
 
-
+//reload data every time the view re-appears
+-(void) viewWillAppear:(BOOL)animated{
+    //sharedData.inCookbook = true;
+    NSLog(@"print: viewWIllAppear");
+    [self.tableView reloadData];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -84,8 +91,6 @@
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alert show];
     
-//    [self saveInCoreData:self.currentName];
-    
 }
 
 -(void)saveInCoreData:(NSString*)textFieldInput
@@ -95,10 +100,7 @@
     
     //     set properties
     newCookbook.cookbookName = textFieldInput;
-    //        newCookbook.cookbookName = @"staticCookbook"; // TODO
-    
-    
-    
+   
     self.cookbooksInCC = [self.cookbooksInCC arrayByAddingObject:newCookbook];
     
     [self.managedObjectContext save:nil]; // save entity to core data
@@ -115,10 +117,6 @@
         NSLog(@"EMPTY INPUT REACHED");
         alertViewInputText = [NSString stringWithFormat:@"invalidNameSOMENUMBER"];
         
-//        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Cookbook Name" message:@"Cookbook name must be minimum 3 characters" delegate:self cancelButtonTitle:@"Create" otherButtonTitles:nil];
-//        alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-//        [alert show];
-
     }
     
     NSLog(@"Entered: %@", alertViewInputText);
@@ -133,79 +131,32 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.cookbooksInCC.count;
+    return [self.cookbooksInCC count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if(indexPath.row>=cookbooksInCC.count || indexPath.row<0){
-//        return nil;
-//    }
-
-    static NSString *CellIdentifier = @"CookbookCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier"];
     
-    if (!cell)
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    static NSString *MyIdentifier = @"CookbookCell";
     
-    CCCookbook *currentCookbook = [self.cookbooksInCC objectAtIndex:indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyIdentifier"];
+    if(cell ==nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MyIdentifier"];
+    }
+    CCCookbook * currentCookbook = [self.cookbooksInCC objectAtIndex:indexPath.row];
+    
+    
     cell.textLabel.text = currentCookbook.cookbookName;
     
-//    CCCookbook *currentCookbook = [self.lists objectAtIndex: self.tableView.indexPathForSelectedRow.row];
-//    cell.textLabel.text = currentCookbook.cookbookName;
-    
-    // Configure the cell...
-    [self.tableView reloadData];
     return cell;
 }
 
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
