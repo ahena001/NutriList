@@ -54,17 +54,7 @@
   //   [self.tableView reloadData];
 }
 
-//
-//    // TODO: Load the lists
-//    // ask the managedObjectContext to retrieve all of the stored cookbooks with a fetchrequest
-//    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"CCCookbook"]; // query in object form..gets all the cookbooks
-//    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"cookbookName" ascending:YES]];
-//    
-//    NSError *error = nil;
-//    self.lists =[self.managedObjectContext executeFetchRequest:fetchRequest error:&error]; // make the global equal the results of the fetch request
-//    NSLog(@"DEVXX: Size of lists in viewDidLoad %lu", self.lists.count);
-//    
-
+3
 //reload data every time the view re-appears
 -(void) viewWillAppear:(BOOL)animated{
     //sharedData.inCookbook = true;
@@ -93,21 +83,6 @@
     
 }
 
--(void)saveInCoreData:(NSString*)textFieldInput
-{
-    
-    CCCookbook *newCookbook= [NSEntityDescription insertNewObjectForEntityForName:@"CCCookbook" inManagedObjectContext:self.managedObjectContext]; // new CCCookbook object created and hooked up to managedObjectContext
-    
-    //     set properties
-    newCookbook.cookbookName = textFieldInput;
-   
-    self.cookbooksInCC = [self.cookbooksInCC arrayByAddingObject:newCookbook];
-    
-    [self.managedObjectContext save:nil]; // save entity to core data
-  
-    
-}
-
 #pragma mark - AlertView input
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     NSString *alertViewInputText =[ [alertView textFieldAtIndex:0]text];
@@ -126,7 +101,27 @@
     
 }
 
-
+-(void)saveInCoreData:(NSString*)textFieldInput
+{
+    
+    CCCookbook *newCookbook= [NSEntityDescription insertNewObjectForEntityForName:@"CCCookbook" inManagedObjectContext:self.managedObjectContext]; // new CCCookbook object created and hooked up to managedObjectContext
+    
+    //     set properties
+    newCookbook.cookbookName = textFieldInput;
+    
+    self.cookbooksInCC = [self.cookbooksInCC arrayByAddingObject:newCookbook];
+    
+    [self.managedObjectContext save:nil]; // save entity to core data
+    [self.tableView reloadData];
+    NSLog(@"reloadedData");
+    for(int i =0; i< [self.cookbooksInCC count]; i++){
+        CCCookbook * cookbook = [self.cookbooksInCC objectAtIndex:i];
+        NSString * cookbookName = cookbook.cookbookName;
+        NSLog(@"COOKBOOK at %i, is of name: %@", i,cookbookName);
+    }
+    
+    
+}
 
 #pragma mark - Table view data source
 

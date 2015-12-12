@@ -74,7 +74,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="25R-2P-sHl" kind="push" id="hie-EP-58B"/>
+                                    <segue destination="25R-2P-sHl" kind="push" id="6hk-z7-ZAY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -87,7 +87,6 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UGr-ui-K9S">
                             <connections>
                                 <action selector="addRecipe:" destination="hUN-NV-w2E" id="2lN-G8-5hG"/>
-                                <segue destination="25R-2P-sHl" kind="push" id="uEF-K3-BuS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -208,7 +207,4 @@
             <point key="canvasLocation" x="2890" y="653"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="uEF-K3-BuS"/>
-    </inferredMetricsTieBreakers>
 </document>
